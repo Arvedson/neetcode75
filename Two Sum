@@ -1,7 +1,5 @@
 /*brute force method, O(n^2)*/ 
 
-
-
 const nums = [1, 2, 3, 4, 5, 6, 7]
 const target = 6
 
@@ -17,5 +15,20 @@ function twoSum (){
     } 
     
 }
-
 console.log(twoSum(nums, target))
+
+/* hash map method O(n)*/
+
+function twoSumhash (nums, target){
+
+    const numToindex = new Map ()
+    
+    for (let i = 0; i < nums.length; i++){
+        const numMenostarget = target - nums[i];
+        if (numToindex.has(numMenostarget)){
+            return [numToindex.get(numMenostarget), i]
+        } numToindex.set(nums[i], i)
+    }
+    return ["solution not found"]
+}
+console.log(twoSumhash(nums, target))
