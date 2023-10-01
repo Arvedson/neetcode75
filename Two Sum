@@ -1,7 +1,7 @@
 /*brute force method, O(n^2)*/ 
 
-const nums = [1, 2, 3, 4, 5, 6, 7]
-const target = 6
+const nums = [1, 2, 6, 4, 5, 4, 7, 8, 10]
+const target = 22
 
 function twoSum (){
     for (let i = 0; i < nums.length; i++){
@@ -12,7 +12,7 @@ function twoSum (){
         }
     } if (nums.length === 0){
         return ["No solution found"]
-    } 
+    } return ["no solution found"]
     
 }
 console.log(twoSum(nums, target))
@@ -22,7 +22,7 @@ console.log(twoSum(nums, target))
 function twoSumhash (nums, target){
 
     const numToindex = new Map ()
-    
+
     for (let i = 0; i < nums.length; i++){
         const numMenostarget = target - nums[i];
         if (numToindex.has(numMenostarget)){
@@ -32,3 +32,27 @@ function twoSumhash (nums, target){
     return ["solution not found"]
 }
 console.log(twoSumhash(nums, target))
+
+/* two pointer solution: este metodo tiene O(n log n) solo si se aplica un sorting, como en este caso no es necesario 
+este metodo tambien es O(n) */ 
+
+
+
+function twoPointer (nums, target){
+
+    let derecha = nums.length-1
+    let izq = 0     
+
+    while(izq <= derecha){
+        let sum = nums[izq] + nums[derecha];
+        if (sum === target){
+            return [izq, derecha];
+        } else if (sum > target) {
+            derecha--;
+        } else {
+            izq++;
+        }
+    } return ["Solution not found"]
+};
+
+console.log(twoPointer(nums, target))

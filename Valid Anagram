@@ -54,7 +54,7 @@ function esAnagrama(claveValorT, claveValorS){
 console.log(esAnagrama(claveValorS, claveValorT))
 
 
-/* easy solution O(n) same principles from the last example, exept for the usage of native methods: */ 
+/* easy solution O(n) same principles from the last example, exept the usage of native methods: */ 
 
 const u = "texto";
 const a = "texto";
