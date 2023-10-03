@@ -22,4 +22,3 @@ function isPalindrome (s){
 }
 console.log(isPalindrome(s))
 
-

@@ -1,7 +1,7 @@
 /*brute force method, O(n^2)*/ 
 
-const nums = [1, 2, 6, 4, 5, 4, 7, 8, 10]
-const target = 22
+const nums = [1, 2, 6, 4, 5, 4, 7, 8, 15, 8, 9, 5, 4, 7, 3] 
+const target = 10
 
 function twoSum (){
     for (let i = 0; i < nums.length; i++){
@@ -33,8 +33,7 @@ function twoSumhash (nums, target){
 }
 console.log(twoSumhash(nums, target))
 
-/* two pointer solution: este metodo tiene O(n log n) solo si se aplica un sorting, como en este caso no es necesario 
-este metodo tambien es O(n) */ 
+/* two pointer solution: este metodo tiene O(n log n) */ 
 
 
 
@@ -56,3 +55,4 @@ function twoPointer (nums, target){
 };
 
 console.log(twoPointer(nums, target))
+
