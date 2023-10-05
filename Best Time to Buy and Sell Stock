@@ -21,5 +21,32 @@ function buySell (nums){
     return minimo
 }
 const resultado = buySell(nums)
-console.log(resultado)
+console.log(resultado) 
  
+
+
+/* Two pointer method ascendiente, eficiencia de O(n) */
+ 
+const prices = [30,7,1,5,3,6,5,9,40,15,10,4,6,7,14,19];
+
+const twoPointerstock = (prices) => {
+
+  let buy = 0;
+  let sell = 1;
+  let maxProfit = 0;
+
+    while(sell < prices.length) {
+
+      if(prices[buy] < prices[sell]) {
+
+      let profit = prices[sell] - prices[buy];
+      maxProfit = Math.max(maxProfit, profit)
+      } else {
+        buy = sell;
+      }
+      sell ++;
+  }
+  return maxProfit;
+}
+console.log(twoPointerstock(prices))
+
