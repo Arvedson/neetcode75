@@ -1,38 +1,34 @@
-const groupAnagrams = function (strings) {
+const groupAnagrams = function (palabras) {
     
-    console.log(strings)
-
-    const anagrama = {};
-    const noAnagrama = [];
-
-    for (let str of strings){
+    const anagramas = new Map();
+    const result = [];
     
-        const count = new Array(26).fill(0)
-        const palabra = str.split().sort().join("")
+
+    for (let str of palabras){
         
+        const count = new Array(26).fill(0)
+        const palabra = str
         for (let letra of palabra) {
-            
                 const indice = letra.charCodeAt(0) - "a".charCodeAt(0);
-                count[indice]++;
-                console.log("hola")
+                count[indice]++;       
         }
         const id = count.join("")
-
-        Object.assign(anagrama, {palabra: id})
-        console.dir(anagrama) 
-
-
-    
-    
-
-            
-            
-            
-    console.log(count)
-    console.log(id)
-    
+        anagramas.set(id, palabra)
     }
-     
 
+    for (const [clave, valor] of anagramas.entries()){
+
+        let vision = anagramas.entries()
+        const sonAnagramas = [...anagramas.keys()]
+        
+    }
 }
-console.log(groupAnagrams(["holaaa", "como", "estas", "holaaa"]))
+
+console.log(groupAnagrams(["holaaa", "como", "estas", "ahloaa", "carro", "rroca", "ohaaal"]))
+
+
+
+
+
+
+

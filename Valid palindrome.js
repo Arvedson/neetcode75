@@ -2,7 +2,7 @@
 el bucle while O(n/2) (two pointers) en el peor caso. la memoria lineal O(n) ya que no se usa ninguna estructura de datos que 
 incremente su tamano de forma exponencial*/ 
 
-const s = "Able was I ere I saw Elba"
+const s = "hola como estas"
 
 function isPalindrome (s){
 
