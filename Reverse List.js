@@ -1,10 +1,41 @@
+class Node {
+    constructor(valor){
+        this.valor = valor;
+        this.next = null;
+    }
+}
+const a = new Node("A")
+const b = new Node("B")
+const c = new Node("C")
+const d = new Node("D")
+const e = new Node("E")
+
+a.next  = b
+b.next = c
+c.next = d
+d.next = e
+
+const reverseList = (head) => {
+
+    let nodoactual = head
+    let anterior = null
+
+    while(nodoactual !== null){
+        /* conservamos la direccion del siguiente nodo */
+        let conservarLink = nodoactual.next
+        /* rompemos la cadena reverseando los punteros */
+        nodoactual.next = anterior
+        anterior = nodoactual
+        nodoactual = conservarLink
+    }
+    return anterior
+
+}
+
+
 /*
 Input: head = [1,2,3,4,5]
 Output: [5,4,3,2,1] 
-
-Input: head = []
-Output: []
-*/
 
 /* 
 
@@ -284,36 +315,3 @@ const resultado = encontrarTargetindexRecursivo(a, targetIndex);
 console.log(resultado)
 */
 
-class Node {
-    constructor(valor){
-        this.valor = valor;
-        this.next = null;
-    }
-}
-const a = new Node("A")
-const b = new Node("B")
-const c = new Node("C")
-const d = new Node("D")
-const e = new Node("E")
-
-a.next  = b
-b.next = c
-c.next = d
-d.next = e
-
-const reverseList = (head) => {
-
-    let nodoactual = head
-    let anterior = null
-
-    while(nodoactual !== null){
-        /* conservamos la direccion del siguiente nodo */
-        let conservarLink = nodoactual.next
-        /* rompemos la cadena reverseando los punteros */
-        nodoactual.next = anterior
-        anterior = nodoactual
-        nodoactual = conservarLink
-    }
-    return anterior
-
-}
